@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:layout_width="wrap_content"
+        android:text="@string/up"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/top"
+        android:clickable="true"
+        android:onClick="pressUp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bot"
+        android:text="@string/dwn"
+        android:layout_below="@+id/mid"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mid"
+        android:text="@string/stp"
+        android:layout_below="@+id/top"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/left"
+        android:text="@string/lft"
+        android:layout_toStartOf="@id/mid"
+        android:layout_toLeftOf="@id/mid"
+        android:layout_alignBottom="@id/mid"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/right"
+        android:text="@string/rgt"
+        android:layout_toRightOf="@id/mid"
+        android:layout_toEndOf="@id/mid"
+        android:layout_alignBottom="@id/mid"/>
+</RelativeLayout>
