@@ -5,7 +5,6 @@
 
     <item
         android:id="@+id/abou"
-        android:icon="@drawable/about"
         android:title="@string/about"
 
 

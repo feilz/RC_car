@@ -23,4 +23,6 @@
     <string name="lft">left</string>
     <string name="stp">STOP</string>
     <string name="dwn">Down</string>
+    <string name="visualSpeed">visualSpeed</string>
+    <string name="trnsform">transform</string>
 </resources>
