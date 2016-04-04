@@ -41,22 +41,8 @@ public class MainActivity extends Activity  implements OnItemClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connect);
-        init();
+        //init();
         myapp = (MyApp)getApplication();
-        if(btAdapter==null){
-            Toast.makeText(getApplicationContext(), "No bluetooth detected", Toast.LENGTH_SHORT).show();
-            finish();
-        }
-        else{
-            if(!btAdapter.isEnabled()){
-                turnOnBT();
-            }
-
-            getPairedDevices();
-            startDiscovery();
-        }
-
-
     }
     private void startDiscovery() {
 
@@ -88,6 +74,18 @@ public class MainActivity extends Activity  implements OnItemClickListener {
         pairedDevices = new ArrayList<>();
         filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
         devices = new ArrayList<>();
+        if(btAdapter==null){
+            Toast.makeText(getApplicationContext(), "No bluetooth detected", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+        else{
+            if(!btAdapter.isEnabled()){
+                turnOnBT();
+            }
+
+            getPairedDevices();
+            startDiscovery();
+        }
         receiver = new BroadcastReceiver(){
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -107,17 +105,19 @@ public class MainActivity extends Activity  implements OnItemClickListener {
 
                     listAdapter.add(device.getName()+" "+s+" "+"\n"+device.getAddress());
                 }
-                else if(BluetoothAdapter.ACTION_DISCOVERY_STARTED.equals(action)){
+                /*else if(BluetoothAdapter.ACTION_DISCOVERY_STARTED.equals(action)){
                     // run some code
                 }
                 else if(BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)){
                     // run some code
-
-
-
                 }
+                */
+
+
+
+
                 else if(BluetoothAdapter.ACTION_STATE_CHANGED.equals(action)){
-                    if(btAdapter.getState() == btAdapter.STATE_OFF){
+                    if(btAdapter.getState() == BluetoothAdapter.STATE_OFF){
                         turnOnBT();
                     }
                 }
@@ -139,6 +139,13 @@ public class MainActivity extends Activity  implements OnItemClickListener {
     protected void onPause() {
         super.onPause();
         unregisterReceiver(receiver);
+    }
+    protected void onResume(){
+        super.onResume();
+        init();
+        getPairedDevices();
+        startDiscovery();
+
     }
 
     @Override
@@ -212,12 +219,12 @@ public class MainActivity extends Activity  implements OnItemClickListener {
 
 
 
-        /** Will cancel an in-progress connection, and close the socket */
+        /** Will cancel an in-progress connection, and close the socket
         public void cancel() {
             try {
                 mmSocket.close();
             } catch (IOException e) {e.printStackTrace(); }
-        }
+        }*/
     }
 
 }
