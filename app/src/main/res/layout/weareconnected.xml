@@ -28,6 +28,7 @@
         android:layout_marginRight="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:clickable="true"
         android:onClick="pressDown"
         android:layout_alignParentBottom="true" />
     <Button
@@ -37,6 +38,7 @@
         android:background="@drawable/bigredbutton"
         android:text="@string/trnsform"
         android:layout_centerVertical="true"
+        android:clickable="true"
         android:onClick="transform"
         android:layout_centerHorizontal="true"/>
     <Button
@@ -48,6 +50,7 @@
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
         android:onClick="turnLeft"
+        android:clickable="true"
         android:layout_alignParentLeft="true"/>
     <Button
         android:layout_width="70dp"
@@ -57,6 +60,7 @@
         android:background="@drawable/arrow_shape"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:clickable="true"
         android:onClick="turnRight"
         android:layout_centerVertical="true"/>
     <Button
@@ -64,6 +68,7 @@
         android:layout_height="70dp"
         android:id="@+id/rotateRight"
         android:rotation="45"
+        android:clickable="true"
         android:background="@drawable/arrow_shape"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -76,6 +81,7 @@
         android:layout_height="70dp"
         android:id="@+id/rotateLeft"
         android:rotation="135"
+        android:clickable="true"
         android:background="@drawable/arrow_shape"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
